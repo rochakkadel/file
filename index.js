@@ -1,6 +1,10 @@
+let count = 0; // Initialize count variable
+
 function calculateStats() {
    const numbersInput = document.getElementById("numbers").value;
    const numbersArray = numbersInput.split(" ").map(Number);
+
+   count += numbersArray.length; // Increment count by the length of the new data
 
    const sum = numbersArray.reduce((total, num) => total + num, 0);
    const average = sum / numbersArray.length;
@@ -18,4 +22,5 @@ function calculateStats() {
    document.getElementById("median").textContent = `Median: ${median}`;
    document.getElementById("smallest").textContent = `Smallest: ${smallest}`;
    document.getElementById("largest").textContent = `Largest: ${largest}`;
+   document.getElementById("count").textContent = `Count: ${count}`; // Display count in HTML
 }

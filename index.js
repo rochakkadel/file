@@ -24,3 +24,14 @@ function calculateStats() {
    document.getElementById("largest").textContent = `Largest: ${largest}`;
    document.getElementById("count").textContent = `Count: ${count}`; // Display count in HTML
 }
+
+function refresh() {
+   count = 0; // Reset count to 0
+   document.getElementById("average").textContent = ""; // Clear average
+   document.getElementById("largest").textContent = ""; // Clear largest
+   document.getElementById("smallest").textContent = ""; // Clear smallest
+   document.getElementById("count").textContent = ""; // Clear count
+   document.getElementById("median").textContent = ""; // Clear median
+   document.getElementById("rateOfChange").textContent = ""; // Clear rate of change
+   document.getElementById("numbers").value = ""; // Clear input field
+}

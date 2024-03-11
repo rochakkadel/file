@@ -16,7 +16,7 @@ body {
 	text-align: center;
 	margin-bottom: 20px;
 	color: lime;
-	font-size: 2em; /* Adjusted font size for mobile */
+	font-size: 10px; /* Adjusted font size for mobile */
 	text-align: center;
 	color: lime;
 	animation-name: fade;

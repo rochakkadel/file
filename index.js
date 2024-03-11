@@ -1,6 +1,7 @@
-let count = 0; // Initialize count variable
+
 
 function calculateStats() {
+   let count = 0; 
    const numbersInput = document.getElementById("numbers").value;
    const numbersArray = numbersInput.split(" ").map(Number);
 

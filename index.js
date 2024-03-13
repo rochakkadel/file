@@ -5,7 +5,7 @@ function calculateStats() {
    const numbersInput = document.getElementById("numbers").value;
    const numbersArray = numbersInput.split(" ").map(Number);
 
-   count += numbersArray.length; // Increment count by the length of the new data
+   count += numbersArray.length; 
 
    const sum = numbersArray.reduce((total, num) => total + num, 0);
    const average = sum / numbersArray.length;
@@ -23,16 +23,16 @@ function calculateStats() {
    document.getElementById("median").textContent = `Median: ${median}`;
    document.getElementById("smallest").textContent = `Smallest: ${smallest}`;
    document.getElementById("largest").textContent = `Largest: ${largest}`;
-   document.getElementById("count").textContent = `Count: ${count}`; // Display count in HTML
+   document.getElementById("count").textContent = `Count: ${count}`; 
 }
 
 function refresh() {
    count = 0; // Reset count to 0
-   document.getElementById("average").textContent = ""; // Clear average
-   document.getElementById("largest").textContent = ""; // Clear largest
-   document.getElementById("smallest").textContent = ""; // Clear smallest
-   document.getElementById("count").textContent = ""; // Clear count
-   document.getElementById("median").textContent = ""; // Clear median
-   document.getElementById("rateOfChange").textContent = ""; // Clear rate of change
-   document.getElementById("numbers").value = ""; // Clear input field
+   document.getElementById("average").textContent = ""; 
+   document.getElementById("largest").textContent = ""; 
+   document.getElementById("smallest").textContent = ""; 
+   document.getElementById("count").textContent = ""; 
+   document.getElementById("median").textContent = ""; 
+   document.getElementById("rateOfChange").textContent = ""; 
+   document.getElementById("numbers").value = ""; 
 }

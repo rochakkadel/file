@@ -17,7 +17,7 @@ body {
    padding: 30px;
    border-radius: 10px;
    max-width: 300px;
-   box-shadow: 0px 0px 40px cyan;
+   box-shadow: 0px 0px 40px lime;
    margin: 0 auto;
 }
 
@@ -59,11 +59,11 @@ button {
    border-radius: 5px;
    cursor: pointer;
    font-size: 12px;
-   margin-right: 10px;
+   margin-right: 10px; 
 }
 
 button:hover {
-   background-color: whitesmoke;
+   background-color: lime;
    color: black;
 }
 

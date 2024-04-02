@@ -15,7 +15,6 @@ body {
 .container {
    text-align: center;
    padding: 30px;
-   background-color: rgb(27, 26, 26);
    border-radius: 10px;
    max-width: 300px;
    box-shadow: 0px 0px 40px cyan;
@@ -40,7 +39,7 @@ label {
 }
 
 input {
-   box-shadow: 3px 1px 8px white;
+   box-shadow: 0px 0px 8px white;
    width: calc(100% - 20px);
    padding: 10px;
    margin-bottom: 20px;
@@ -69,15 +68,15 @@ button:hover {
 }
 
 .calculate{
-   box-shadow: 2px 1px 7px wheat;
+   box-shadow: 0px 0px 9px wheat;
 }
 
 #results {
    margin-top: 5px;
    font-size: 15px;
    padding: 10px;
-   animation: slideIn 10s forwards;
-
+   text-align: left;
+   margin-left: 80px;
 }
 
 #results p {

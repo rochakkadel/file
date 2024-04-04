@@ -2,7 +2,7 @@ const h1 = document.getElementById("h1");
 
 
 document.addEventListener("keydown", event =>{
-   h1.style.color = "wheat";
+   h1.style.color = "gold";
 })
 
 

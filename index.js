@@ -1,30 +1,34 @@
 const h1 = document.getElementById("h1");
 
+document.addEventListener("keydown", event => {
+    h1.style.color = "gold";
+});
 
-document.addEventListener("keydown", event =>{
-   h1.style.color = "gold";
-})
-
-
-document.addEventListener("keyup", event =>{
-   h1.style.color = "white";
-})
-
-
+document.addEventListener("keyup", event => {
+    h1.style.color = "white";
+});
 
 function calculateStats() {
-    let count = 0; 
+    let count = 0;
     const numbersInput = document.getElementById("numbers").value;
     const numbersArray = numbersInput.split(" ").map(Number);
  
-    count += numbersArray.length; 
+    count += numbersArray.length;
  
-    const sum = numbersArray.reduce((total, num) => total + num, 0);
-    const average = sum / numbersArray.length;
- 
+
     const sortedArray = numbersArray.slice().sort((a, b) => a - b);
+    
+
+    sortedArray.shift();  
+    sortedArray.pop();  
+    
+
+    const sum = sortedArray.reduce((total, num) => total + num, 0);
+    const average = sortedArray.length > 0 ? sum / sortedArray.length : 0;  
+ 
+
     const middle = Math.floor(sortedArray.length / 2);
-    const median = sortedArray.length % 2 === 0 ? 
+    const median = sortedArray.length % 2 === 0 ?
                    (sortedArray[middle - 1] + sortedArray[middle]) / 2 :
                    sortedArray[middle];
  
@@ -35,11 +39,11 @@ function calculateStats() {
     document.getElementById("median").textContent = `Median: ${median}`;
     document.getElementById("smallest").textContent = `Smallest: ${smallest}`;
     document.getElementById("largest").textContent = `Largest: ${largest}`;
-    document.getElementById("count").textContent = `Count: ${count}`; 
- }
+    document.getElementById("count").textContent = `Count: ${count}`;
+}
  
- function refresh() {
-    count = 0; // Reset count to 0
+function refresh() {
+    count = 0; 
     document.getElementById("average").textContent = ""; 
     document.getElementById("largest").textContent = ""; 
     document.getElementById("smallest").textContent = ""; 
@@ -47,5 +51,4 @@ function calculateStats() {
     document.getElementById("median").textContent = ""; 
     document.getElementById("rateOfChange").textContent = ""; 
     document.getElementById("numbers").value = ""; 
- }
- 
+}

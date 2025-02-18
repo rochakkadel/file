@@ -21,6 +21,9 @@ function calculateStats() {
  
     const sum = numbersArray.reduce((total, num) => total + num, 0);
     const average = sum / numbersArray.length;
+
+    sortedArray.shift();  
+    sortedArray.pop();
  
     const sortedArray = numbersArray.slice().sort((a, b) => a - b);
     const middle = Math.floor(sortedArray.length / 2);

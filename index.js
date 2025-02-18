@@ -19,26 +19,28 @@ function calculateStats() {
 
     const numbersArray = numbersInput.split(/\s+/).map(Number).filter(n => !isNaN(n));
 
-    if (numbersArray.length === 0) {
-        alert("Invalid input. Enter valid numbers.");
+    if (numbersArray.length < 3) {
+        alert("Enter at least 3 numbers.");
         return;
     }
 
     count = numbersArray.length;
 
-    const sum = numbersArray.reduce((total, num) => total + num, 0);
-    const average = sum / count;
-
     const sortedArray = [...numbersArray].sort((a, b) => a - b);
-    const middle = Math.floor(sortedArray.length / 2);
-    const median = sortedArray.length % 2 === 0 ?
-        (sortedArray[middle - 1] + sortedArray[middle]) / 2 :
-        sortedArray[middle];
+    const middleNumbers = sortedArray.slice(1, -1); 
+
+    const sum = middleNumbers.reduce((total, num) => total + num, 0);
+    const adjustedAverage = sum / middleNumbers.length;
+
+    const middle = Math.floor(middleNumbers.length / 2);
+    const median = middleNumbers.length % 2 === 0 ?
+        (middleNumbers[middle - 1] + middleNumbers[middle]) / 2 :
+        middleNumbers[middle];
 
     const smallest = Math.min(...numbersArray);
     const largest = Math.max(...numbersArray);
 
-    document.getElementById("average").textContent = `Average: ${average.toFixed(2)}`;
+    document.getElementById("average").textContent = `Adjusted Avg: ${adjustedAverage.toFixed(2)}`;
     document.getElementById("median").textContent = `Median: ${median}`;
     document.getElementById("smallest").textContent = `Smallest: ${smallest}`;
     document.getElementById("largest").textContent = `Largest: ${largest}`;
